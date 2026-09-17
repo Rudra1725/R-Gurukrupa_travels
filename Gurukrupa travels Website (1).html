@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R-Gurukrupa Travels | Pandharpur - Pune Premium Daily Express</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg-dark: #070c14;
+      --bg-card: rgba(13, 22, 38, 0.82);
+      --surface-border: rgba(45, 212, 191, 0.18);
+      --primary-cyan: #06b6d4;
+      --accent-teal: #14b8a6;
+      --vibrant-indigo: #6366f1;
+      --electric-emerald: #10b981;
+      --text-bright: #f8fafc;
+      --text-dim: #94a3b8;
+      --seat-free: #1e293b;
+      --seat-selected: #06b6d4;
+      --seat-ladies: #ec4899;
+      --seat-border: rgba(255, 255, 255, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-bright);
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(6, 182, 212, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 85% 35%, rgba(99, 102, 241, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(20, 184, 166, 0.08) 0%, transparent 50%);
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(7, 12, 20, 0.85);
+      border-bottom: 1px solid var(--surface-border);
+      padding: 1.1rem 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-logo i {
+      color: var(--primary-cyan);
+      font-size: 1.6rem;
+      filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.6));
+    }
+
+    .brand-logo span {
+      background: linear-gradient(135deg, var(--primary-cyan), var(--accent-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.25s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary-cyan);
+    }
+
+    .btn-quick-call {
+      background: linear-gradient(135deg, #06b6d4, #0891b2);
+      color: #041017;
+      padding: 0.65rem 1.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .btn-quick-call:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(6, 182, 212, 0.55);
+    }
+
+    /* Hero Section */
+    .hero-container {
+      padding: 3.5rem 6% 2rem;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: flex-start;
+    }
+
+    .badge-route {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 7px 15px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-cyan);
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3.2rem;
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      letter-spacing: -1px;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, var(--primary-cyan), #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    /* Quality Highlights Grid */
+    .service-qualities {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .quality-card {
+      background: rgba(13, 22, 38, 0.6);
+      border: 1px solid var(--surface-border);
+      border-radius: 14px;
+      padding: 1.2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    .quality-icon {
+      background: rgba(6, 182, 212, 0.12);
+      color: var(--primary-cyan);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .quality-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .quality-card p {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    /* Interactive Bus Layout Card */
+    .booking-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--surface-border);
+      border-radius: 24px;
+      padding: 2rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .booking-wrapper h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .booking-wrapper p.subtitle {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      margin-bottom: 1.6rem;
+    }
+
+    /* Bus Cabin Architecture UI */
+    .bus-frame {
+      background: rgba(7, 12, 20, 0.9);
+      border: 2px solid rgba(6, 182, 212, 0.25);
+      border-radius: 28px 28px 16px 16px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .bus-windshield {
+      height: 10px;
+      border: 2px solid rgba(6, 182, 212, 0.4);
+      border-bottom: none;
+      border-radius: 12px 12px 0 0;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .bus-front-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px 14px;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+      margin-bottom: 14px;
+    }
+
+    .driver-zone {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .driver-zone i {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+    }
+
+    .bus-entry-gate {
+      font-size: 0.72rem;
+      color: var(--accent-teal);
+      background: rgba(20, 184, 166, 0.1);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(20, 184, 166, 0.3);
+    }
+
+    .bus-seating-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bus-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .seat-pair {
+      display: flex;
+      gap: 8px;
+    }
+
+    .bus-aisle {
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.2);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .seat-node {
+      width: 44px;
+      height: 44px;
+      background: var(--seat-free);
+      border: 1px solid var(--seat-border);
+      border-radius: 9px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .seat-node i {
+      font-size: 0.68rem;
+      margin-bottom: 2px;
+      color: var(--text-dim);
+    }
+
+    .seat-node:hover {
+      border-color: var(--primary-cyan);
+      transform: scale(1.05);
+    }
+
+    .seat-node.ladies {
+      border-color: rgba(236, 72, 153, 0.5);
+      background: rgba(236, 72, 153, 0.12);
+    }
+
+    .seat-node.ladies i {
+      color: var(--seat-ladies);
+    }
+
+    .seat-node.selected {
+      background: var(--primary-cyan);
+      color: #041017;
+      border-color: #67e8f9;
+      box-shadow: 0 0 14px rgba(6, 182, 212, 0.7);
+    }
+
+    .seat-node.selected i {
+      color: #041017;
+    }
+
+    .seat-legend {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .legend-box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    /* Input Controls */
+    .form-field {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-field label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 6px;
+    }
+
+    .form-field input,
+    .form-field select {
+      width: 100%;
+      background: rgba(7, 12, 20, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+      padding: 0.85rem 1rem;
+      border-radius: 11px;
+      font-size: 0.92rem;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .form-field select option {
+      background: #0d1626;
+      color: #fff;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus {
+      border-color: var(--primary-cyan);
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+    }
+
+    .form-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .btn-reserve-wa {
+      width: 100%;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #ffffff;
+      border: none;
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+      transition: all 0.25s ease;
+      margin-top: 1rem;
+    }
+
+    .btn-reserve-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(16, 185, 129, 0.45);
+    }
+
+    /* Route Stop Points Showcase */
+    .route-section {
+      padding: 3rem 6%;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 2.8rem;
+    }
+
+    .section-head h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-head p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
+
+    .route-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .route-box {
+      background: var(--bg-card);
+      border: 1px solid var(--surface-border);
+      border-radius: 20px;
+      padding: 2rem;
+    }
+
+    .route-box-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .route-box-header i {
+      font-size: 1.4rem;
+      color: var(--primary-cyan);
+    }
+
+    .route-box-header h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .stop-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .stop-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: #e2e8f0;
+    }
+
+    .stop-list li i {
+      color: var(--accent-teal);
+      font-size: 0.85rem;
+    }
+
+    /* Live Transitioning Testimonials */
+    .reviews-section {
+      padding: 3.5rem 6% 4.5rem;
+      background: rgba(13, 22, 38, 0.4);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .testimonial-carousel-container {
+      max-width: 780px;
+      margin: 0 auto;
+      position: relative;
+      min-height: 230px;
+    }
+
+    .testimonial-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--surface-border);
+      border-radius: 20px;
+      padding: 2.2rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px) scale(0.98);
+      transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, visibility 0.8s;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .testimonial-card.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .review-stars {
+      color: #fbbf24;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 4px;
+    }
+
+    .review-quote {
+      font-size: 1.08rem;
+      line-height: 1.6;
+      color: #f1f5f9;
+      font-style: italic;
+      margin-bottom: 1.4rem;
+    }
+
+    .reviewer-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .reviewer-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-cyan);
+    }
+
+    .reviewer-info span {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .verified-pill {
+      background: rgba(16, 185, 129, 0.12);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.5rem;
+    }
+
+    .indicator-dot {
+      width: 24px;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s;
+    }
+
+    .indicator-dot.active {
+      background: var(--primary-cyan);
+      width: 40px;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-badge {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-badge:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 980px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        padding-top: 2rem;
+      }
+      .route-columns {
+        grid-template-columns: 1fr;
+      }
+      .service-qualities {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.4rem;
+      }
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header>
+    <a href="#" class="brand-logo">
+      <i class="fa-solid fa-van-shuttle"></i>
+      <div><span>R-Gurukrupa</span> Travels</div>
+    </a>
+    <nav>
+      <a href="#booking">Select Seat & Book</a>
+      <a href="#points">Pickup & Drop Stops</a>
+      <a href="#reviews">Passenger Reviews</a>
+      <a href="tel:+919876543210" class="btn-quick-call">
+        <i class="fa-solid fa-phone-volume"></i> +91 98765 43210
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero & Bus Coordinates Section -->
+  <main class="hero-container">
+    <div class="hero-left">
+      <div class="badge-route">
+        <i class="fa-solid fa-route"></i> Pandharpur ⇄ Pune Daily Express
+      </div>
+      <h1 class="hero-title">
+        Comfortable, Safe & Punctual <span class="gradient-text">Highway Travel.</span>
+      </h1>
+      <p class="hero-desc">
+        Direct daily trips between Pandharpur and Pune with door-to-hub pickups, verified experienced drivers, and reserved seating for ladies and families.
+      </p>
+
+      <!-- Travel Qualities Grid -->
+      <div class="service-qualities">
+        <div class="quality-card">
+          <div class="quality-icon"><i class="fa-solid fa-clock-check"></i></div>
+          <div>
+            <h4>Strict On-Time Departures</h4>
+            <p>Fixed schedules with real-time driver coordination on the highway.</p>
+          </div>
+        </div>
+
+        <div class="quality-card">
+          <div class="quality-icon"><i class="fa-solid fa-snowflake"></i></div>
+          <div>
+            <h4>Climate Controlled AC</h4>
+            <p>Clean, high-roof vehicles with pushback seats and USB charging ports.</p>
+          </div>
+        </div>
+
+        <div class="quality-card">
+          <div class="quality-icon"><i class="fa-solid fa-user-shield"></i></div>
+          <div>
+            <h4>Verified & Senior Drivers</h4>
+            <p>Professionally vetted highway pilots prioritizing safety over speed.</p>
+          </div>
+        </div>
+
+        <div class="quality-card">
+          <div class="quality-icon"><i class="fa-solid fa-luggage-cart"></i></div>
+          <div>
+            <h4>Safe Luggage Care</h4>
+            <p>Spacious boot storage for bags, temple prasad, and business packages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking & Bus Seat Matrix -->
+    <div class="booking-wrapper" id="booking">
+      <h3><i class="fa-solid fa-ticket-simple" style="color: var(--primary-cyan);"></i> Reserve Your Seat</h3>
+      <p class="subtitle">Click any seat in the bus layout to pick your preferred spot</p>
+
+      <!-- Interactive Bus Coordinate Architecture -->
+      <div class="bus-frame">
+        <div class="bus-windshield"></div>
+        <div class="bus-front-row">
+          <div class="driver-zone"><i class="fa-solid fa-steering-wheel fa-spin-hover"></i> Driver Cabin</div>
+          <div class="bus-entry-gate">Door Entry</div>
+        </div>
+
+        <div class="bus-seating-grid" id="busSeatingGrid">
+          <!-- Row 1 (Front Row) -->
+          <div class="bus-row">
+            <div class="seat-pair">
+              <div class="seat-node" data-seat="1W (Front Window)">
+                <i class="fa-solid fa-chair"></i>1W
+              </div>
+              <div class="seat-node" data-seat="2A (Front Aisle)">
+                <i class="fa-solid fa-chair"></i>2A
+              </div>
+            </div>
+            <span class="bus-aisle">Front</span>
+            <div class="seat-pair">
+              <div class="seat-node ladies" data-seat="3A (Front Ladies)">
+                <i class="fa-solid fa-person-dress"></i>3A
+              </div>
+              <div class="seat-node ladies" data-seat="4W (Front Window Ladies)">
+                <i class="fa-solid fa-person-dress"></i>4W
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 (Mid-Front) -->
+          <div class="bus-row">
+            <div class="seat-pair">
+              <div class="seat-node" data-seat="5W (Mid Window)">
+                <i class="fa-solid fa-chair"></i>5W
+              </div>
+              <div class="seat-node" data-seat="6A (Mid Aisle)">
+                <i class="fa-solid fa-chair"></i>6A
+              </div>
+            </div>
+            <span class="bus-aisle">Mid</span>
+            <div class="seat-pair">
+              <div class="seat-node" data-seat="7A (Mid Aisle)">
+                <i class="fa-solid fa-chair"></i>7A
+              </div>
+              <div class="seat-node" data-seat="8W (Mid Window)">
+                <i class="fa-solid fa-chair"></i>8W
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3 (Mid-Rear) -->
+          <div class="bus-row">
+            <div class="seat-pair">
+              <div class="seat-node" data-seat="9W (Mid Window)">
+                <i class="fa-solid fa-chair"></i>9W
+              </div>
+              <div class="seat-node" data-seat="10A (Mid Aisle)">
+                <i class="fa-solid fa-chair"></i>10A
+              </div>
+            </div>
+            <span class="bus-aisle">Mid</span>
+            <div class="seat-pair">
+              <div class="seat-node" data-seat="11A (Mid Aisle)">
+                <i class="fa-solid fa-chair"></i>11A
+              </div>
+              <div class="seat-node" data-seat="12W (Mid Window)">
+                <i class="fa-solid fa-chair"></i>12W
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 4 (Back Row) -->
+          <div class="bus-row">
+            <div class="seat-pair">
+              <div class="seat-node" data-seat="13W (Back Window)">
+                <i class="fa-solid fa-chair"></i>13W
+              </div>
+              <div class="seat-node" data-seat="14A (Back Aisle)">
+                <i class="fa-solid fa-chair"></i>14A
+              </div>
+            </div>
+            <span class="bus-aisle">Rear</span>
+            <div class="seat-pair">
+              <div class="seat-node" data-seat="15A (Back Aisle)">
+                <i class="fa-solid fa-chair"></i>15A
+              </div>
+              <div class="seat-node" data-seat="16W (Back Window)">
+                <i class="fa-solid fa-chair"></i>16W
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="seat-legend">
+          <div class="legend-box"><div class="legend-dot" style="background: var(--seat-free); border: 1px solid var(--seat-border);"></div> Available</div>
+          <div class="legend-box"><div class="legend-dot" style="background: var(--seat-selected);"></div> Selected</div>
+          <div class="legend-box"><div class="legend-dot" style="background: var(--seat-ladies);"></div> Ladies Priority</div>
+        </div>
+      </div>
+
+      <!-- Registration Form -->
+      <form id="travelForm">
+        <div class="form-field">
+          <label><i class="fa-solid fa-user"></i> Passenger Full Name</label>
+          <input type="text" id="custName" placeholder="Enter passenger name" required />
+        </div>
+
+        <div class="form-split">
+          <div class="form-field">
+            <label><i class="fa-solid fa-phone"></i> Mobile Number</label>
+            <input type="tel" id="custPhone" placeholder="10-digit number" pattern="[0-9]{10}" required />
+          </div>
+          <div class="form-field">
+            <label><i class="fa-solid fa-venus-mars"></i> Passenger Gender</label>
+            <select id="custGender" required>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Pandharpur Pickups -->
+        <div class="form-field">
+          <label><i class="fa-solid fa-location-dot" style="color: var(--primary-cyan);"></i> Pickup Stop in Pandharpur</label>
+          <select id="custPickup" required>
+            <option value="" disabled selected>Choose Pickup Point</option>
+            <option value="Pandharpur Central ST Stand">Pandharpur Central ST Stand</option>
+            <option value="Vitthal Mandir Mahadwar Chowk">Vitthal Mandir Mahadwar Chowk</option>
+            <option value="Shivaji Maharaj Chowk">Shivaji Maharaj Chowk</option>
+            <option value="Isbavi Naka">Isbavi Naka</option>
+            <option value="Chandrabhaga Bridge / Ghat Corner">Chandrabhaga Bridge / Ghat Corner</option>
+            <option value="Namdev Payatha">Namdev Payatha</option>
+          </select>
+        </div>
+
+        <!-- Pune Drops -->
+        <div class="form-field">
+          <label><i class="fa-solid fa-map-pin" style="color: #818cf8;"></i> Drop Stop in Pune</label>
+          <select id="custDrop" required>
+            <option value="" disabled selected>Choose Drop Point</option>
+            <option value="Hadapsar (Gadital / Mega Center)">Hadapsar (Gadital / Mega Center)</option>
+            <option value="Swargate ST Stand / Bus Stop">Swargate ST Stand / Bus Stop</option>
+            <option value="Katraj (Wonder City / Highway Bypass)">Katraj (Wonder City / Highway Bypass)</option>
+            <option value="Pune Railway Station (Platform 1 Side)">Pune Railway Station (Platform 1 Side)</option>
+            <option value="Shivajinagar Bus Station">Shivajinagar Bus Station</option>
+            <option value="Viman Nagar / Chandan Nagar Bypass">Viman Nagar / Chandan Nagar Bypass</option>
+            <option value="Wakad / Hinjewadi Flyover Bridge">Wakad / Hinjewadi Flyover Bridge</option>
+          </select>
+        </div>
+
+        <!-- Selected Seat State -->
+        <div class="form-field">
+          <label><i class="fa-solid fa-couch"></i> Selected Seat</label>
+          <input type="text" id="selectedSeatLabel" readonly value="Click any seat in bus layout above" style="color: var(--primary-cyan); font-weight: 700;" />
+        </div>
+
+        <button type="submit" class="btn-reserve-wa">
+          <i class="fa-brands fa-whatsapp"></i> Confirm & Book via WhatsApp
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Route Pickups & Drop Points Details -->
+  <section class="route-section" id="points">
+    <div class="section-head">
+      <h2>Complete Boarding & Drop Network</h2>
+      <p>Convenient points across Pandharpur and Pune so you don't have to waste time commuting inside the city.</p>
+    </div>
+
+    <div class="route-columns">
+      <div class="route-box">
+        <div class="route-box-header">
+          <i class="fa-solid fa-location-arrow"></i>
+          <h3>Pandharpur Pickup Points</h3>
+        </div>
+        <ul class="stop-list">
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Central ST Stand:</strong> Main entrance departure bay</li>
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Vitthal Mandir Mahadwar:</strong> Near Bhakta Niwas gate</li>
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Shivaji Chowk:</strong> City circle transit point</li>
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Isbavi Naka:</strong> Solapur-Pune bypass junction</li>
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Chandrabhaga Ghat:</strong> River crossing approach road</li>
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Namdev Payatha:</strong> Direct passenger boarding point</li>
+        </ul>
+      </div>
+
+      <div class="route-box">
+        <div class="route-box-header">
+          <i class="fa-solid fa-flag-checkered"></i>
+          <h3>Pune Drop Points</h3>
+        </div>
+        <ul class="stop-list">
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Hadapsar:</strong> Gadital chowk & Mega Center flyover</li>
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Swargate:</strong> Main PMT / ST terminus depot</li>
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Katraj:</strong> Wonder City square and tunnel bypass</li>
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Pune Station:</strong> Front circulating parking bay</li>
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Shivajinagar:</strong> Central transport junction</li>
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Viman Nagar / Chandan Nagar:</strong> Highway bridge</li>
+          <li><i class="fa-solid fa-circle-dot"></i> <strong>Wakad / Hinjewadi:</strong> IT park express highway exit</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Passenger Reviews Carousel (5-Second Fade Transition) -->
+  <section class="reviews-section" id="reviews">
+    <div class="section-head">
+      <h2>Passenger Experiences</h2>
+      <p>Verified feedback from daily Pune commuters and temple pilgrims.</p>
+    </div>
+
+    <div class="testimonial-carousel-container">
+      <!-- Review 1 -->
+      <div class="testimonial-card active">
+        <div class="review-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="review-quote">"Travelled with my elderly parents from Pandharpur to Pune. Driver was very polite, no unnecessary rash overtaking, and dropped us right at Gadital Hadapsar. Extremely smooth journey!"</p>
+        <div class="reviewer-meta">
+          <div class="reviewer-info">
+            <h4>Aniket Kulkarni</h4>
+            <span>Hadapsar, Pune • Regular Traveler</span>
+          </div>
+          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Passenger</div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="testimonial-card">
+        <div class="review-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="review-quote">"Reserved front ladies seats for my sister and mom. Safe environment, punctual departure from ST stand, and air-conditioning was maintained at the right temperature throughout the trip."</p>
+        <div class="reviewer-meta">
+          <div class="reviewer-info">
+            <h4>Pooja Shinde</h4>
+            <span>Swargate, Pune • Weekend Pilgrim</span>
+          </div>
+          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Passenger</div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="testimonial-card">
+        <div class="review-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="review-quote">"The easiest WhatsApp booking experience. Selected the window seat online, got pickup confirmation in 5 minutes. Best service on the Solapur-Pune highway!"</p>
+        <div class="reviewer-meta">
+          <div class="reviewer-info">
+            <h4>Sagar Patil</h4>
+            <span>Wakad, Pune • IT Professional</span>
+          </div>
+          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Passenger</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-indicators">
+      <div class="indicator-dot active"></div>
+      <div class="indicator-dot"></div>
+      <div class="indicator-dot"></div>
+    </div>
+  </section>
+
+  <!-- Floating Direct Contact Action -->
+  <a href="https://wa.me/919876543210?text=Hello%20R-Gurukrupa%20Travels,%20I%20want%20to%20book%20a%20seat." class="whatsapp-badge" target="_blank" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // 1. Bus Seat Selection Coordinate Engine
+    let currentlySelectedSeat = "1W (Front Window)";
+    const seatNodes = document.querySelectorAll(".seat-node");
+    const seatInputDisplay = document.getElementById("selectedSeatLabel");
+
+    // Pre-select first seat
+    seatNodes[0].classList.add("selected");
+
+    seatNodes.forEach(node => {
+      node.addEventListener("click", () => {
+        seatNodes.forEach(s => s.classList.remove("selected"));
+        node.classList.add("selected");
+        currentlySelectedSeat = node.getAttribute("data-seat");
+        seatInputDisplay.value = currentlySelectedSeat;
+      });
+    });
+
+    // 2. Continuous 5-Second Testimonial Fade Carousel
+    const testimonials = document.querySelectorAll(".testimonial-card");
+    const indicatorDots = document.querySelectorAll(".indicator-dot");
+    let currentReviewIndex = 0;
+
+    function transitionTestimonial() {
+      testimonials[currentReviewIndex].classList.remove("active");
+      indicatorDots[currentReviewIndex].classList.remove("active");
+
+      currentReviewIndex = (currentReviewIndex + 1) % testimonials.length;
+
+      testimonials[currentReviewIndex].classList.add("active");
+      indicatorDots[currentReviewIndex].classList.add("active");
+    }
+
+    setInterval(transitionTestimonial, 5000);
+
+    // 3. Automated WhatsApp Reservation Dispatcher
+    const TRAVEL_WHATSAPP_NUMBER = "919876543210"; // Replace with your WhatsApp business number
+
+    document.getElementById("travelForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const gender = document.getElementById("custGender").value;
+      const pickup = document.getElementById("custPickup").value;
+      const drop = document.getElementById("custDrop").value;
+      const seat = currentlySelectedSeat;
+
+      const message = 
+`*R-GURUKRUPA TRAVELS - NEW SEAT RESERVATION*
+----------------------------------------
+*Passenger Name:* ${name}
+*Mobile Number:* ${phone}
+*Gender:* ${gender}
+*Pickup Point (Pandharpur):* ${pickup}
+*Drop Point (Pune):* ${drop}
+*Chosen Seat / Coordination:* ${seat}
+----------------------------------------
+Please verify seat availability and share journey timing.`;
+
+      const encoded = encodeURIComponent(message);
+      window.open(`https://wa.me/${TRAVEL_WHATSAPP_NUMBER}?text=${encoded}`, "_blank");
+    });
+  </script>
+</body>
+</html>
